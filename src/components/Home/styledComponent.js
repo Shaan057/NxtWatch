@@ -16,7 +16,6 @@ export const MainContainer = styled.div`
   display: flex;
 `
 export const HomeSection = styled.div`
-  background-color: ${props => (props.isDarkTheme ? '#181818' : '#f9f9f9')};
   display: flex;
   flex-direction: column;
   width: 100%;
