@@ -38,6 +38,8 @@ import {
   FailureHeading,
   FailurePara,
   RetryButton,
+  VideoTitle,
+  HorizontalLine,
 } from './styledComponent'
 
 import Header from '../Header'
@@ -111,23 +113,16 @@ class Video extends Component {
     }
   }
 
-  renderLoadingView = () => (
-    <NxtContext.Consumer>
-      {value => {
-        const {isDarkTheme} = value
-        return (
-          <LoaderContainer data-testid="loader">
-            <Loader
-              className="loader-center"
-              type="ThreeDots"
-              color={isDarkTheme ? '#ffffff' : 'black'}
-              height="50"
-              width="50"
-            />
-          </LoaderContainer>
-        )
-      }}
-    </NxtContext.Consumer>
+  renderLoadingView = isDarkTheme => (
+    <LoaderContainer data-testid="loader">
+      <Loader
+        className="loader-center"
+        type="ThreeDots"
+        color={isDarkTheme ? '#ffffff' : 'black'}
+        height="50"
+        width="50"
+      />
+    </LoaderContainer>
   )
 
   renderVideosView = () => {
@@ -205,7 +200,7 @@ class Video extends Component {
           return (
             <>
               <ReactPlayer className="player-styled" url={videoUrl} controls />
-              <p>{title}</p>
+              <VideoTitle>{title}</VideoTitle>
               <PostLikeContainer>
                 <VideoStats>
                   <VideoViews>{viewCount} views</VideoViews>
@@ -231,7 +226,9 @@ class Video extends Component {
                   </SaveButton>
                 </LikeDislikeContainer>
               </PostLikeContainer>
-              <hr className="horizontalLine" />
+              <HorizontalLine
+              //   className="horizontalLine"
+              />
               <ChannelDetailsContainer>
                 <ChannelIconContainer>
                   <ChannelImg src={profileImageUrl} alt="channel logo" />
@@ -251,47 +248,39 @@ class Video extends Component {
     )
   }
 
-  renderFailureView = () => (
-    <NxtContext.Consumer>
-      {value => {
-        const {isDarkTheme} = value
-        return (
-          <FailureViewContainer>
-            <FailureImg
-              src={
-                isDarkTheme
-                  ? 'https://assets.ccbp.in/frontend/react-js/nxt-watch-failure-view-dark-theme-img.png'
-                  : 'https://assets.ccbp.in/frontend/react-js/nxt-watch-failure-view-light-theme-img.png'
-              }
-              alt="failure view"
-            />
-            <FailureHeading>Oops! Something Went Wrong</FailureHeading>
-            <FailurePara>
-              We are having some trouble to complete your request. Please try
-              again.
-            </FailurePara>
-            <RetryButton
-              data-testid="retry"
-              type="button"
-              onClick={this.getVideoDetails}
-            >
-              Retry
-            </RetryButton>
-          </FailureViewContainer>
-        )
-      }}
-    </NxtContext.Consumer>
+  renderFailureView = isDarkTheme => (
+    <FailureViewContainer>
+      <FailureImg
+        src={
+          isDarkTheme
+            ? 'https://assets.ccbp.in/frontend/react-js/nxt-watch-failure-view-dark-theme-img.png'
+            : 'https://assets.ccbp.in/frontend/react-js/nxt-watch-failure-view-light-theme-img.png'
+        }
+        alt="failure view"
+      />
+      <FailureHeading>Oops! Something Went Wrong</FailureHeading>
+      <FailurePara>
+        We are having some trouble to complete your request. Please try again.
+      </FailurePara>
+      <RetryButton
+        // data-testid="retry"
+        type="button"
+        onClick={this.getVideoDetails}
+      >
+        Retry
+      </RetryButton>
+    </FailureViewContainer>
   )
 
-  renderVideo = () => {
+  renderVideo = isDarkTheme => {
     const {apiStatus} = this.state
     switch (apiStatus) {
       case apiStatusConstants.success:
         return this.renderVideosView()
       case apiStatusConstants.failure:
-        return this.renderFailureView()
+        return this.renderFailureView(isDarkTheme)
       case apiStatusConstants.inProgress:
-        return this.renderLoadingView()
+        return this.renderLoadingView(isDarkTheme)
       default:
         return null
     }
@@ -309,9 +298,9 @@ class Video extends Component {
             >
               <Header />
               <VideoSectionContainer>
-                <SideBar />
+                <SideBar isDarkTheme={isDarkTheme} />
                 <VideoDetailsViewContainer>
-                  {this.renderVideo()}
+                  {this.renderVideo(isDarkTheme)}
                 </VideoDetailsViewContainer>
               </VideoSectionContainer>
             </VideoMainContainer>

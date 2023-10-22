@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 export const MainHomePage = styled.div`
   min-height: 100vh;
-  background-color: ${props => (props.isDarkTheme ? '#0f0f0f' : '#f9f9f9')};
+  background-color: ${props => (props.isDarkTheme ? '#181818' : '#f9f9f9')};
   color: ${props => (props.isDarkTheme ? 'grey' : 'black')};
 `
 // export const MainHomePageH = styled.div`
@@ -31,6 +31,7 @@ export const VideosSection = styled.div`
 `
 
 export const SearchContainer = styled.div`
+  background-color: ${props => props.isDarkTheme && '#f9f9f9'};
   margin: 23px 20px 0px 20px;
   display: flex;
   align-items: center;
@@ -150,20 +151,6 @@ export const SearchButton = styled.button`
   color: white;
   font-size: 15px;
   background-color: transparent;
-`
-
-export const SearchRetryButton = styled.button`
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  outline: none;
-  color: white;
-  font-size: 15px;
-  background-color: #3634a5;
-  padding: 10px;
-  width: 100px;
-  border-radius: 5px;
 `
 
 export const RetryButton = styled.button`

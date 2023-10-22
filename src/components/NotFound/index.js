@@ -1,11 +1,14 @@
 import './index.css'
-import {NotFoundImg, NotFoundHeading, NotFoundPara} from './styledComponent'
-import NxtContext from '../../context/context'
-import {HomeSection as NotFoundContainer} from '../Home/styledComponent'
 import {
-  VideoMainContainer as MainContainer,
-  VideoSectionContainer as SideBarNotFound,
-} from '../Video/styledComponent'
+  NotFoundImg,
+  NotFoundContainer,
+  NotFoundHeading,
+  NotFoundPara,
+  MainContainer,
+  BottomContainer,
+} from './styledComponent'
+import NxtContext from '../../context/context'
+
 import Header from '../Header'
 import SideBar from '../SideBar'
 
@@ -14,17 +17,11 @@ const NotFound = () => (
     {value => {
       const {isDarkTheme} = value
       return (
-        <MainContainer className={isDarkTheme ? 'dark' : ''}>
+        <MainContainer isDarkTheme={isDarkTheme}>
           <Header />
-          <SideBarNotFound>
-            <SideBar />
-            <NotFoundContainer
-              className={
-                isDarkTheme
-                  ? 'dark container-styling'
-                  : 'light container-styling'
-              }
-            >
+          <BottomContainer>
+            <SideBar isDarkTheme={isDarkTheme} />
+            <NotFoundContainer>
               <NotFoundImg
                 src={
                   isDarkTheme
@@ -38,7 +35,7 @@ const NotFound = () => (
                 We are sorry, the page you requested could not be found.
               </NotFoundPara>
             </NotFoundContainer>
-          </SideBarNotFound>
+          </BottomContainer>
         </MainContainer>
       )
     }}

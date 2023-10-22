@@ -16,9 +16,28 @@ export const NotFoundHeading = styled.h1`
 `
 
 export const NotFoundPara = styled.p`
-  font-size: 15px;
+  font-size: 13px;
   text-align: center;
   @media screen and (min-width: 768px) {
     font-size: 20px;
   }
+`
+
+export const BottomContainer = styled.div`
+  display: flex;
+  min-height: 93vh;
+`
+
+export const MainContainer = styled.div`
+  min-height: 100vh;
+  background-color: ${props => (props.isDarkTheme ? '#0f0f0f' : '#f9f9f9')};
+  color: ${props => (props.isDarkTheme ? 'grey' : 'black')};
+`
+
+export const NotFoundContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 `

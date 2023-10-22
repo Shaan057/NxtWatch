@@ -15,7 +15,7 @@ import {
   MainContainer,
   VideoListUl,
   HomeSection,
-  //   SearchButton,
+  SearchButton,
   SearchContainer,
   SearchInput,
   VideosSection,
@@ -24,13 +24,12 @@ import {
   FailureImg,
   FailureHeading,
   FailurePara,
-  //   RetryButton,
+  RetryButton,
   LoaderContainerH,
   FailureSearchImg,
   ShowNoResultsViewContainer,
   SearchFailureHeading,
   SearchFailurePara,
-  //   SearchRetryButton,
 } from './styledComponent'
 
 const apiStatusConstants = {
@@ -126,14 +125,14 @@ class Home extends Component {
       <SearchFailurePara>
         Try different key words or remove search filter
       </SearchFailurePara>
-      <button
-        className="retry-button"
-        data-testid="retry"
+      <RetryButton
+        // className="retry-button"
+        // data-testid="retry"
         type="button"
         onClick={this.retried}
       >
         Retry
-      </button>
+      </RetryButton>
     </ShowNoResultsViewContainer>
   )
 
@@ -144,71 +143,56 @@ class Home extends Component {
     )
   }
 
-  renderFailureView = () => {
+  renderFailureView = isDarkTheme => {
     const {showNoResults} = this.state
     return showNoResults ? (
       this.showNoResultsView()
     ) : (
-      <NxtContext.Consumer>
-        {value => {
-          const {isDarkTheme} = value
-          return (
-            <FailureViewContainer>
-              <FailureImg
-                src={
-                  isDarkTheme
-                    ? 'https://assets.ccbp.in/frontend/react-js/nxt-watch-failure-view-dark-theme-img.png'
-                    : 'https://assets.ccbp.in/frontend/react-js/nxt-watch-failure-view-light-theme-img.png'
-                }
-                alt="failure view"
-              />
-              <FailureHeading>Oops! Something Went Wrong</FailureHeading>
-              <FailurePara>
-                We are having some trouble to complete your request. Please try
-                again.
-              </FailurePara>
-              <button
-                className="retry-button"
-                type="button"
-                data-testid="retry"
-                onClick={this.getHomePageData}
-              >
-                Retry
-              </button>
-            </FailureViewContainer>
-          )
-        }}
-      </NxtContext.Consumer>
+      <FailureViewContainer>
+        <FailureImg
+          src={
+            isDarkTheme
+              ? 'https://assets.ccbp.in/frontend/react-js/nxt-watch-failure-view-dark-theme-img.png'
+              : 'https://assets.ccbp.in/frontend/react-js/nxt-watch-failure-view-light-theme-img.png'
+          }
+          alt="failure view"
+        />
+        <FailureHeading>Oops! Something Went Wrong</FailureHeading>
+        <FailurePara>
+          We are having some trouble to complete your request. Please try again.
+        </FailurePara>
+        <RetryButton
+          className="retry-button"
+          type="button"
+          data-testid="retry"
+          onClick={this.getHomePageData}
+        >
+          Retry
+        </RetryButton>
+      </FailureViewContainer>
     )
   }
 
-  renderLoadingView = () => (
-    <NxtContext.Consumer>
-      {value => {
-        const {isDarkTheme} = value
-        return (
-          <LoaderContainerH data-testid="loader">
-            <Loader
-              type="ThreeDots"
-              color={isDarkTheme ? '#ffffff' : '#0f0f0f'}
-              height="50"
-              width="50"
-            />
-          </LoaderContainerH>
-        )
-      }}
-    </NxtContext.Consumer>
+  renderLoadingView = isDarkTheme => (
+    <LoaderContainerH data-testid="loader">
+      <Loader
+        type="ThreeDots"
+        color={isDarkTheme ? '#ffffff' : '#0f0f0f'}
+        height="50"
+        width="50"
+      />
+    </LoaderContainerH>
   )
 
-  renderVideos = () => {
+  renderVideos = isDarkTheme => {
     const {apiStatus} = this.state
     switch (apiStatus) {
       case apiStatusConstants.success:
         return this.renderVideosView()
       case apiStatusConstants.failure:
-        return this.renderFailureView()
+        return this.renderFailureView(isDarkTheme)
       case apiStatusConstants.inProgress:
-        return this.renderLoadingView()
+        return this.renderLoadingView(isDarkTheme)
       default:
         return null
     }
@@ -245,28 +229,30 @@ class Home extends Component {
             <MainHomePage data-testid="home" isDarkTheme={isDarkTheme}>
               <Header />
               <MainContainer>
-                <SideBar />
-                <HomeSection isDarkTheme={isDarkTheme}>
+                <SideBar isDarkTheme={isDarkTheme} />
+                <HomeSection
+                // isDarkTheme={isDarkTheme}
+                >
                   {buyPremiumShow && <BuyPremiumView />}
 
                   <VideosSection>
-                    <SearchContainer>
+                    <SearchContainer isDarkTheme={isDarkTheme}>
                       <SearchInput
                         value={searchedInput}
                         type="search"
                         placeholder="Search"
                         onChange={this.onChangeSearchInput}
                       />
-                      <button
+                      <SearchButton
                         type="button"
-                        className="searchButton"
+                        // className="searchButton"
                         data-testid="searchButton"
                         onClick={this.onSearched}
                       >
                         <BiSearchAlt2 color="grey" />
-                      </button>
+                      </SearchButton>
                     </SearchContainer>
-                    {this.renderVideos()}
+                    {this.renderVideos(isDarkTheme)}
                   </VideosSection>
                 </HomeSection>
               </MainContainer>

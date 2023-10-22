@@ -33,6 +33,7 @@ export const InputCheckBox = styled.input``
 export const Label = styled.label`
   font-size: 13px;
 `
+export const LineBreak = styled.br``
 
 export const LoginButton = styled.button`
   width: 100%;

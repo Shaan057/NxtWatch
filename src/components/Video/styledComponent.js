@@ -10,6 +10,10 @@ export const VideoSectionContainer = styled.div`
   display: flex;
   min-height: 93vh;
 `
+export const HorizontalLine = styled.hr`
+  width: 100%;
+  border-top: 1px solid grey;
+`
 
 export const LoaderContainer = styled.div`
   display: flex;
@@ -20,8 +24,6 @@ export const LoaderContainer = styled.div`
 `
 
 export const VideoTitle = styled.p``
-
-export const HorizontalLine = styled.hr``
 
 export const PostLikeContainer = styled.div`
   display: flex;

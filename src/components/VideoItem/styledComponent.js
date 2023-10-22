@@ -35,7 +35,10 @@ export const VideoInfo = styled.div``
 
 export const VideoTitle = styled.p`
   margin-top: 0px;
-  font-size: 13px;
+  font-size: 11px;
+  @media screen and (min-width: 768px) {
+    font-size: 14px;
+  }
 `
 export const ChannelName = styled.p`
   color: grey;

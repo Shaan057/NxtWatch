@@ -15,6 +15,7 @@ export const MainSideBar = styled.div`
 export const SideBarList = styled.ul`
   list-style-type: none;
   padding: 0px;
+  margin-top: 0px;
 `
 
 export const ListItem = styled.li``

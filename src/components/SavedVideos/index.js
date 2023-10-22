@@ -30,7 +30,7 @@ const SavedVideos = () => (
         >
           <Header />
           <MainContainer>
-            <SideBar />
+            <SideBar isDarkTheme={isDarkTheme} />
             <SavedVideosSection>
               <SavedVideoHeader isDarkTheme={isDarkTheme}>
                 <SaveImgContainer isDarkTheme={isDarkTheme}>

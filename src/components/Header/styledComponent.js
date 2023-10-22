@@ -17,20 +17,19 @@ export const SampleButton = styled.button`
 `
 
 export const LogoutContainer = styled.div`
-  background-color: ${props => (props.isDarkTheme ? '#ffffff' : '#212121')};
+  background-color: ${props => (props.isDarkTheme ? '#ffffff' : '#0f0f0f')};
   color: ${props => (props.isDarkTheme ? 'black' : 'grey')};
-  height: 200px;
-  width: 290px;
+  max-height: 230px;
+  max-width: 290px;
+  border-radius: 12px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border-radius: 10px;
-  gap: 30px;
   color: grey;
   height: 250px;
   width: 400px;
-  gap: 30px;
+  gap: 50px;
 `
 export const Menu = styled.div`
   color: ${props => (props.isDarkTheme ? 'grey' : 'black')};
@@ -39,9 +38,9 @@ export const Menu = styled.div`
   background-color: ${props => (props.isDarkTheme ? '#f9f9f9' : '#0f0f0f')};
   overflow-x: hidden;
   overflow-y: scroll;
-  height: 240px;
-  width: 290px;
-  border-radius: 10px;
+  max-height: 240px;
+  max-width: 290px;
+  border-radius: 12px;
   padding: 10px;
   height: 250px;
   width: 400px;
@@ -70,7 +69,7 @@ export const LogoutContainer3 = styled.div`
 `
 export const ButtonsContainer = styled.div`
   display: flex;
-  gap: 25px;
+  gap: 34px;
   background-color: transparent;
 `
 
@@ -80,7 +79,7 @@ export const ConfirmButton = styled.button`
   outline: none;
   background-color: #1c80f0;
   border-radius: 4px;
-  padding: 10px 15px;
+  padding: 8px 15px;
   color: white;
 `
 export const CancelButton = styled.button`
@@ -89,7 +88,7 @@ export const CancelButton = styled.button`
   cursor: pointer;
   outline: none;
   border-radius: 4px;
-  padding: 10px 15px;
+  padding: 8px 15px;
   color: grey;
 `
 
@@ -148,7 +147,7 @@ export const LogoutButton3 = styled.button`
     display: none;
   }
 `
-export const ParaEl = styled.p``
+export const Para = styled.p``
 
 export const MobileMainSidebar = styled.div`
   background-color: transparent;
@@ -268,20 +267,28 @@ export const ListElement = styled.ul`
   justify-content: center;
   align-items: center;
   list-style-type: none;
-  padding: 0;
+  padding: 0px;
   gap: 10px;
   margin: 0px;
 `
-export const ListItem = styled.li``
+
+export const ListItem = styled.li`
+  display: flex;
+  align-items: center;
+`
 export const ListItem2 = styled.li`
-  display: block;
+  display: flex;
+  align-items: center;
+  //   display: block;
   @media screen (min-width: 768px) {
     display: none;
   }
 `
 export const ListItem3 = styled.li`
   // profile
-  display: block;
+  //   display: block;
+  display: flex;
+  align-items: center;
 
   @media screen (min-width: 768px) {
     display: none;
@@ -291,12 +298,16 @@ export const ListItem4 = styled.li`
   // Logout button
   display: none;
   @media screen and (min-width: 768px) {
-    display: block;
+    // display: block;
+    display: flex;
+    align-items: center;
   }
 `
 export const ListItem5 = styled.li`
   // logout icon
-  display: block;
+  //   display: block;
+  display: flex;
+  align-items: center;
   @media screen (min-width: 768px) {
     display: none;
   }

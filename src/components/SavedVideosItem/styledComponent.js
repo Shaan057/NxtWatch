@@ -20,7 +20,7 @@ export const LinkEl = styled(Link)`
 export const VideoThumbnail = styled.img`
   height: 220px;
   @media screen and (min-width: 768px) {
-    width: 40%;
+    height: 220px;
   }
 `
 export const VideoTitle = styled.p`

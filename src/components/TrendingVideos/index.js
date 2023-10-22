@@ -89,22 +89,15 @@ class TrendingVideos extends Component {
     }
   }
 
-  renderLoadingView = () => (
-    <NxtContext.Consumer>
-      {value => {
-        const {isDarkTheme} = value
-        return (
-          <LoaderContainer data-testid="loader">
-            <Loader
-              type="ThreeDots"
-              color={isDarkTheme ? '#ffffff' : 'black'}
-              height="50"
-              width="50"
-            />
-          </LoaderContainer>
-        )
-      }}
-    </NxtContext.Consumer>
+  renderLoadingView = isDarkTheme => (
+    <LoaderContainer data-testid="loader">
+      <Loader
+        type="ThreeDots"
+        color={isDarkTheme ? '#ffffff' : 'black'}
+        height="50"
+        width="50"
+      />
+    </LoaderContainer>
   )
 
   renderVideosView = () => {
@@ -118,39 +111,31 @@ class TrendingVideos extends Component {
     )
   }
 
-  renderFailureView = () => (
-    <NxtContext.Consumer>
-      {value => {
-        const {isDarkTheme} = value
-        return (
-          <FailureViewContainer>
-            <FailureImg
-              src={
-                isDarkTheme
-                  ? 'https://assets.ccbp.in/frontend/react-js/nxt-watch-failure-view-dark-theme-img.png'
-                  : 'https://assets.ccbp.in/frontend/react-js/nxt-watch-failure-view-light-theme-img.png'
-              }
-              alt="failure view"
-            />
-            <FailureHeading>Oops! Something Went Wrong</FailureHeading>
-            <FailurePara>
-              We are having some trouble to complete your request. Please try
-              again.
-            </FailurePara>
-            <RetryButton
-              data-testid="retry"
-              type="button"
-              onClick={this.getTrendingVideos}
-            >
-              Retry
-            </RetryButton>
-          </FailureViewContainer>
-        )
-      }}
-    </NxtContext.Consumer>
+  renderFailureView = isDarkTheme => (
+    <FailureViewContainer>
+      <FailureImg
+        src={
+          isDarkTheme
+            ? 'https://assets.ccbp.in/frontend/react-js/nxt-watch-failure-view-dark-theme-img.png'
+            : 'https://assets.ccbp.in/frontend/react-js/nxt-watch-failure-view-light-theme-img.png'
+        }
+        alt="failure view"
+      />
+      <FailureHeading>Oops! Something Went Wrong</FailureHeading>
+      <FailurePara>
+        We are having some trouble to complete your request. Please try again.
+      </FailurePara>
+      <RetryButton
+        // data-testid="retry"
+        type="button"
+        onClick={this.getTrendingVideos}
+      >
+        Retry
+      </RetryButton>
+    </FailureViewContainer>
   )
 
-  renderVideos = () => {
+  renderVideos = isDarkTheme => {
     const {apiStatus} = this.state
     switch (apiStatus) {
       case apiStatusConstants.success:
@@ -158,7 +143,7 @@ class TrendingVideos extends Component {
       case apiStatusConstants.failure:
         return this.renderFailureView()
       case apiStatusConstants.inProgress:
-        return this.renderLoadingView()
+        return this.renderLoadingView(isDarkTheme)
       default:
         return null
     }
@@ -176,7 +161,7 @@ class TrendingVideos extends Component {
             >
               <Header />
               <MainContainer>
-                <SideBar />
+                <SideBar isDarkTheme={isDarkTheme} />
                 <TrendingVideosSection>
                   <VideosSection>
                     <TrendingVideoHeader isDarkTheme={isDarkTheme}>
@@ -185,7 +170,7 @@ class TrendingVideos extends Component {
                       </FireImgContainer>
                       <TrendingTitle>Trending</TrendingTitle>
                     </TrendingVideoHeader>
-                    {this.renderVideos()}
+                    {this.renderVideos(isDarkTheme)}
                   </VideosSection>
                 </TrendingVideosSection>
               </MainContainer>

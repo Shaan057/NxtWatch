@@ -1,8 +1,6 @@
 import {Component} from 'react'
 import Cookies from 'js-cookie'
 import {Redirect} from 'react-router-dom'
-
-import NxtContext from '../../context/context'
 import {
   MainContainer,
   LoginForm,
@@ -13,6 +11,7 @@ import {
   LoginButton,
   ErrorMsg,
   InputCheckBox,
+  LineBreak,
 } from './styledComponent'
 import './index.css'
 
@@ -77,65 +76,53 @@ class Login extends Component {
     }
     const {username, password, showError, errorMsg, showPassword} = this.state
     return (
-      <NxtContext.Consumer>
-        {value => {
-          const {isDarkTheme} = value
-          return (
-            <MainContainer className="bg-container" data-testid="login">
-              <LoginForm className="login-form" onSubmit={this.onFormSubmit}>
-                <WebsiteLogo
-                  className="website-logo"
-                  src={
-                    isDarkTheme
-                      ? 'https://assets.ccbp.in/frontend/react-js/nxt-watch-logo-dark-theme-img.png'
-                      : 'https://assets.ccbp.in/frontend/react-js/nxt-watch-logo-light-theme-img.png'
-                  }
-                  alt="website logo"
-                />
-                <Container>
-                  <Label className="label" htmlFor="username">
-                    USERNAME
-                  </Label>
-                  <InputEl
-                    id="username"
-                    value={username}
-                    type="text"
-                    placeholder="Username"
-                    className="input"
-                    onChange={this.onChangeUsername}
-                  />
-                </Container>
-                <Container>
-                  <Label htmlFor="password">PASSWORD</Label>
-                  <br />
-                  <InputEl
-                    id="password"
-                    value={password}
-                    type={showPassword ? 'text' : 'password'}
-                    placeholder="Password"
-                    onChange={this.onChangePassword}
-                  />
-                </Container>
-                <Container>
-                  <InputCheckBox
-                    id="show-password"
-                    type="checkbox"
-                    value={password}
-                    onChange={this.onChangeCheckBox}
-                  />
-                  <Label htmlFor="show-password">Show Password</Label>
-                </Container>
-                <LoginButton type="submit" className="submit-button">
-                  Login
-                </LoginButton>
-                {showError && (
-                  <ErrorMsg className="error-msg">*{errorMsg}</ErrorMsg>
-                )}
-              </LoginForm>
-            </MainContainer>
-          )
-        }}
-      </NxtContext.Consumer>
+      <MainContainer className="bg-container" data-testid="login">
+        <LoginForm className="login-form" onSubmit={this.onFormSubmit}>
+          <WebsiteLogo
+            className="website-logo"
+            src="https://assets.ccbp.in/frontend/react-js/nxt-watch-logo-light-theme-img.png"
+            alt="website logo"
+          />
+          <Container>
+            <Label className="label" htmlFor="username">
+              USERNAME
+            </Label>
+            <LineBreak />
+            <InputEl
+              id="username"
+              value={username}
+              type="text"
+              placeholder="Username"
+              className="input"
+              onChange={this.onChangeUsername}
+            />
+          </Container>
+          <Container>
+            <Label htmlFor="password">PASSWORD</Label>
+            <LineBreak />
+            <InputEl
+              id="password"
+              value={password}
+              type={showPassword ? 'text' : 'password'}
+              placeholder="Password"
+              onChange={this.onChangePassword}
+            />
+          </Container>
+          <Container>
+            <InputCheckBox
+              id="show-password"
+              type="checkbox"
+              value={password}
+              onChange={this.onChangeCheckBox}
+            />
+            <Label htmlFor="show-password">Show Password</Label>
+          </Container>
+          <LoginButton type="submit" className="submit-button">
+            Login
+          </LoginButton>
+          {showError && <ErrorMsg className="error-msg">*{errorMsg}</ErrorMsg>}
+        </LoginForm>
+      </MainContainer>
     )
   }
 }

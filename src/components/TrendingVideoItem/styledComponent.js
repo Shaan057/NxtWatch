@@ -23,9 +23,9 @@ export const VideoStats = styled.div`
 `
 
 export const VideoThumbnail = styled.img`
-  height: 220px;
+  max-width: 100%;
   @media screen and (min-width: 768px) {
-    width: 40%;
+    width: 320px;
   }
 `
 export const VideoTitle = styled.p`
@@ -34,10 +34,10 @@ export const VideoTitle = styled.p`
   font-weight: 600;
 
   @media screen and (min-width: 1024px and max-width: 768px) {
-    font-size: 25px;
+    font-size: 20px;
   }
   @media screen and (min-width: 768px) {
-    font-size: 25px;
+    font-size: 20px;
     margin: 8px 0px;
   }
 `
@@ -50,7 +50,7 @@ export const ChannelName = styled.p`
 
   @media screen and (min-width: 768px) {
     margin: 8px 0px;
-    font-size: 25px;
+    font-size: 20px;
   }
 `
 export const TrendingVideoPostDate = styled.p`
@@ -59,13 +59,13 @@ export const TrendingVideoPostDate = styled.p`
 
   @media screen and (min-width: 768px) {
     margin: 8px 0px;
-    font-size: 25px;
+    font-size: 18px;
   }
 `
 export const TrendingVideoViews = styled.p`
   font-size: 16px;
   margin: 0;
   @media screen and (min-width: 768px) {
-    font-size: 25px;
+    font-size: 18px;
   }
 `

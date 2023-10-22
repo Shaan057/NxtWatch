@@ -21,12 +21,11 @@ import {
   ConfirmButton,
   HeaderWebsiteLogo,
   ThemeButton,
-  //   ParaEl,
   ProfileImg,
   LogoutButton,
   LogoutButton2,
   LogoutButton3,
-  MobileMainSidebar,
+  //   MobileMainSidebar,
   MobileSideBarList,
   MobileListItem1,
   MobileListItem2,
@@ -45,6 +44,8 @@ import {
   ListItem4,
   ListItem5,
   CloseButton,
+  Container,
+  Para,
 } from './styledComponent'
 import NxtContext from '../../context/context'
 
@@ -67,7 +68,7 @@ const Header = props => {
 
         return (
           <NavBar className={isDarkTheme ? 'darkSideBar' : 'lightSideBar'}>
-            <div>
+            <Container>
               <Link to="/">
                 <HeaderWebsiteLogo
                   src={
@@ -78,7 +79,7 @@ const Header = props => {
                   alt="website logo"
                 />
               </Link>
-            </div>
+            </Container>
             <ListElement>
               <ListItem>
                 <ThemeButton
@@ -248,7 +249,7 @@ const Header = props => {
                 >
                   {close => (
                     <LogoutContainer isDarkTheme={isDarkTheme}>
-                      <p>Are you sure, you want to logout</p>
+                      <Para>Are you sure, you want to logout</Para>
                       <ButtonsContainer>
                         <CancelButton onClick={() => close()}>
                           Cancel
@@ -273,7 +274,7 @@ const Header = props => {
                 >
                   {close => (
                     <LogoutContainer isDarkTheme={isDarkTheme}>
-                      <p>Are you sure, you want to logout</p>
+                      <Para>Are you sure, you want to logout</Para>
                       <ButtonsContainer>
                         <CancelButton onClick={() => close()}>
                           Cancel
