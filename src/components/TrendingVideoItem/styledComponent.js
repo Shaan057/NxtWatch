@@ -11,6 +11,7 @@ export const VideoContainer = styled.div`
     flex-direction: row;
   }
 `
+
 export const VideoStats = styled.div`
   display: flex;
   gap: 4px;
@@ -23,7 +24,7 @@ export const VideoStats = styled.div`
 `
 
 export const VideoThumbnail = styled.img`
-  max-width: 100%;
+  width: 100%;
   @media screen and (min-width: 768px) {
     width: 320px;
   }

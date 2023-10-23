@@ -61,7 +61,6 @@ class GamingVideos extends Component {
       method: 'GET',
     }
     const response = await fetch(url, options)
-
     if (response.ok === true) {
       const data = await response.json()
       const videosData = data.videos.map(each => this.getFormattedData(each))

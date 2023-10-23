@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import {Link} from 'react-router-dom'
 
 export const VideoItem = styled.li`
   width: 100%;
@@ -12,15 +11,12 @@ export const VideoContainer = styled.div`
     flex-direction: row;
   }
 `
-export const LinkEl = styled(Link)`
-  color: 'grey';
-  text-decoration: none;
-`
 
 export const VideoThumbnail = styled.img`
-  height: 220px;
+  width: 100%;
   @media screen and (min-width: 768px) {
-    height: 220px;
+    height: 200px;
+    width: 320px;
   }
 `
 export const VideoTitle = styled.p`
@@ -29,15 +25,15 @@ export const VideoTitle = styled.p`
   font-weight: 600;
 
   @media screen and (min-width: 1024px and max-width: 768px) {
-    font-size: 25px;
+    font-size: 20px;
   }
   @media screen and (min-width: 768px) {
-    font-size: 25px;
+    font-size: 20px;
     margin: 8px 0px;
   }
 `
 
-export const TrendingVideosStats = styled.div``
+export const SavedVideosStats = styled.div``
 
 export const VideoStats = styled.div`
   display: flex;
@@ -56,22 +52,22 @@ export const ChannelName = styled.p`
 
   @media screen and (min-width: 768px) {
     margin: 8px 0px;
-    font-size: 25px;
+    font-size: 20px;
   }
 `
-export const TrendingVideoPostDate = styled.p`
+export const SavedVideoPostDate = styled.p`
   margin: 4px 0px;
   font-size: 16px;
 
   @media screen and (min-width: 768px) {
     margin: 8px 0px;
-    font-size: 25px;
+    font-size: 18px;
   }
 `
-export const TrendingVideoViews = styled.p`
+export const SavedVideoViews = styled.p`
   font-size: 16px;
   margin: 0;
   @media screen and (min-width: 768px) {
-    font-size: 25px;
+    font-size: 18px;
   }
 `

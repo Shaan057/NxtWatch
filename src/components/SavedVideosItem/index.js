@@ -7,12 +7,12 @@ import {
   VideoItem,
   VideoStats,
   VideoTitle,
-  TrendingVideoViews,
-  TrendingVideoPostDate,
+  SavedVideoViews,
+  SavedVideoPostDate,
   ChannelName,
   VideoThumbnail,
   VideoContainer,
-  TrendingVideosStats,
+  SavedVideosStats,
 } from './styledComponent'
 
 const SavedVideosItem = props => {
@@ -25,15 +25,15 @@ const SavedVideosItem = props => {
       <Link to={`/videos/${id}`} className="link">
         <VideoContainer>
           <VideoThumbnail src={thumbnailUrl} alt="video thumbnail" />
-          <TrendingVideosStats>
+          <SavedVideosStats>
             <VideoTitle>{title}</VideoTitle>
             <ChannelName>{name}</ChannelName>
             <VideoStats>
-              <TrendingVideoViews>{viewCount} views</TrendingVideoViews>
+              <SavedVideoViews>{viewCount} views</SavedVideoViews>
               <BsDot className="bsDot" color="grey" />
-              <TrendingVideoPostDate>{publishedAt}</TrendingVideoPostDate>
+              <SavedVideoPostDate>{publishedAt}</SavedVideoPostDate>
             </VideoStats>
-          </TrendingVideosStats>
+          </SavedVideosStats>
         </VideoContainer>
       </Link>
     </VideoItem>
