@@ -597,41 +597,39 @@ console.log(formatDistanceToNow(new Date(2021, 8, 20)))
 <summary>Colors</summary>
 
 <br/>
-
-<div style="background-color: #0f0f0f; width: 150px; padding: 10px; color: white">Hex: #0f0f0f</div>
-<div style="background-color: #f9f9f9; width: 150px; padding: 10px; color: black">Hex: #f9f9f9</div>
-<div style="background-color: #f8fafc; width: 150px; padding: 10px; color: black">Hex: #f8fafc</div>
-<div style="background-color: #1e293b; width: 150px; padding: 10px; color: white">Hex: #1e293b</div>
-<div style="background-color: #f1f5f9; width: 150px; padding: 10px; color: black">Hex: #f1f5f9</div>
-<div style="background-color: #475569; width: 150px; padding: 10px; color: white">Hex: #475569</div>
-<div style="background-color: #f1f1f1; width: 150px; padding: 10px; color: black">Hex: #f1f1f1</div>
-<div style="background-color: #181818; width: 150px; padding: 10px; color: white">Hex: #181818</div>
-<div style="background-color: #e2e8f0; width: 150px; padding: 10px; color: black">Hex: #e2e8f0</div>
-<div style="background-color: #94a3b8; width: 150px; padding: 10px; color: black">Hex: #94a3b8</div>
-<div style="background-color: #4f46e5; width: 150px; padding: 10px; color: white">Hex: #4f46e5</div>
-<div style="background-color: #64748b; width: 150px; padding: 10px; color: white">Hex: #64748b</div>
-<div style="background-color: #231f20; width: 150px; padding: 10px; color: white">Hex: #231f20</div>
-<div style="background-color: #ffffff; width: 150px; padding: 10px; color: black">Hex: #ffffff</div>
-<div style="background-color: #212121; width: 150px; padding: 10px; color: white">Hex: #212121</div>
-<div style="background-color: #616e7c; width: 150px; padding: 10px; color: white">Hex: #616e7c</div>
-<div style="background-color: #3b82f6; width: 150px; padding: 10px; color: white">Hex: #3b82f6</div>
-<div style="background-color: #00306e; width: 150px; padding: 10px; color: white">Hex: #00306e</div>
-<div style="background-color: #ebebeb; width: 150px; padding: 10px; color: black">Hex: #ebebeb</div>
-<div style="background-color: #7e858e; width: 150px; padding: 10px; color: black">Hex: #7e858e</div>
-<div style="background-color: #d7dfe9; width: 150px; padding: 10px; color: black">Hex: #d7dfe9</div>
-<div style="background-color: #cbd5e1; width: 150px; padding: 10px; color: black">Hex: #cbd5e1</div>
-<div style="background-color: #000000; width: 150px; padding: 10px; color: white">Hex: #000000</div>
-<div style="background-color: #ff0b37; width: 150px; padding: 10px; color: white">Hex: #ff0b37</div>
-<div style="background-color: #ff0000; width: 150px; padding: 10px; color: white">Hex: #ff0000</div>
-<div style="background-color: #383838; width: 150px; padding: 10px; color: white">Hex: #383838</div>
-<div style="background-color: #606060; width: 150px; padding: 10px; color: white">Hex: #606060</div>
-<div style="background-color: #909090; width: 150px; padding: 10px; color: black">Hex: #909090</div>
-<div style="background-color: #cccccc; width: 150px; padding: 10px; color: black">Hex: #cccccc</div>
-<div style="background-color: #424242; width: 150px; padding: 10px; color: black">Hex: #424242</div>
-<div style="background-color: #313131; width: 150px; padding: 10px; color: black">Hex: #313131</div>
-<div style="background-color: #f4f4f4; width: 150px; padding: 10px; color: black">Hex: #f4f4f4</div>
-<div style="background-color: #424242; width: 150px; padding: 10px; color: black">Hex: #424242</div>
-
+<span style="background-color: #0f0f0f; width: 150px; padding: 10px; color: white">Hex: #0f0f0f</span>
+<span style="background-color: #f9f9f9; width: 150px; padding: 10px; color: black">Hex: #f9f9f9</span>
+<span style="background-color: #f8fafc; width: 150px; padding: 10px; color: black">Hex: #f8fafc</span>
+<span style="background-color: #1e293b; width: 150px; padding: 10px; color: white">Hex: #1e293b</span>
+<span style="background-color: #f1f5f9; width: 150px; padding: 10px; color: black">Hex: #f1f5f9</span>
+<span style="background-color: #475569; width: 150px; padding: 10px; color: white">Hex: #475569</span>
+<span style="background-color: #f1f1f1; width: 150px; padding: 10px; color: black">Hex: #f1f1f1</span>
+<span style="background-color: #181818; width: 150px; padding: 10px; color: white">Hex: #181818</span>
+<span style="background-color: #e2e8f0; width: 150px; padding: 10px; color: black">Hex: #e2e8f0</span>
+<span style="background-color: #94a3b8; width: 150px; padding: 10px; color: black">Hex: #94a3b8</span>
+<span style="background-color: #4f46e5; width: 150px; padding: 10px; color: white">Hex: #4f46e5</span>
+<span style="background-color: #64748b; width: 150px; padding: 10px; color: white">Hex: #64748b</span>
+<span style="background-color: #231f20; width: 150px; padding: 10px; color: white">Hex: #231f20</span>
+<span style="background-color: #ffffff; width: 150px; padding: 10px; color: black">Hex: #ffffff</span>
+<span style="background-color: #212121; width: 150px; padding: 10px; color: white">Hex: #212121</span>
+<span style="background-color: #616e7c; width: 150px; padding: 10px; color: white">Hex: #616e7c</span>
+<span style="background-color: #3b82f6; width: 150px; padding: 10px; color: white">Hex: #3b82f6</span>
+<span style="background-color: #00306e; width: 150px; padding: 10px; color: white">Hex: #00306e</span>
+<span style="background-color: #ebebeb; width: 150px; padding: 10px; color: black">Hex: #ebebeb</span>
+<span style="background-color: #7e858e; width: 150px; padding: 10px; color: black">Hex: #7e858e</span>
+<span style="background-color: #d7dfe9; width: 150px; padding: 10px; color: black">Hex: #d7dfe9</span>
+<span style="background-color: #cbd5e1; width: 150px; padding: 10px; color: black">Hex: #cbd5e1</span>
+<span style="background-color: #000000; width: 150px; padding: 10px; color: white">Hex: #000000</span>
+<span style="background-color: #ff0b37; width: 150px; padding: 10px; color: white">Hex: #ff0b37</span>
+<span style="background-color: #ff0000; width: 150px; padding: 10px; color: white">Hex: #ff0000</span>
+<span style="background-color: #383838; width: 150px; padding: 10px; color: white">Hex: #383838</span>
+<span style="background-color: #606060; width: 150px; padding: 10px; color: white">Hex: #606060</span>
+<span style="background-color: #909090; width: 150px; padding: 10px; color: black">Hex: #909090</span>
+<span style="background-color: #cccccc; width: 150px; padding: 10px; color: black">Hex: #cccccc</span>
+<span style="background-color: #424242; width: 150px; padding: 10px; color: black">Hex: #424242</span>
+<span style="background-color: #313131; width: 150px; padding: 10px; color: black">Hex: #313131</span>
+<span style="background-color: #f4f4f4; width: 150px; padding: 10px; color: black">Hex: #f4f4f4</span>
+<span style="background-color: #424242; width: 150px; padding: 10px; color: black">Hex: #424242</span>
 </details>
 
 <details>
