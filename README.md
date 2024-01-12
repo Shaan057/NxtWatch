@@ -14,6 +14,7 @@
 
 - Implemented a basic authentication flow and handled common errors such as invalid username and invalid password.
 - Used cookies to persist user credentials across page reloads.
+- `Cross browser compatibility` (Chrome, Opera, Mozilla Firefox, Microsoft Edge, Safari).
 
 ### State Management and Navigation:
 
